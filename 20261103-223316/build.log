@@ -1,0 +1,351 @@
+=== CamarasONVIF (Build APK) ===
+workflow: C:\Users\Anderson\Desktop\CamarasONVIF\.github\workflows\build.yml
+salida:   C:\Users\Anderson\Desktop\CamarasONVIF\20261103-223316
+Preparando copia limpia del proyecto (como el checkout de GitHub)...
+Copia lista: 14 archivos
+
+--- Revisión previa
+  Shell de los pasos 'run': bash.
+  - paso 'Compilar APK': usa 'gradle' y no está.
+Instalando: winget install --id Gradle.Gradle -e --silent --disable-interactivity --accept-package-agreements --accept-source-agreements
+(si Windows pide permisos de administrador, aceptá)
+No se encontró ningún paquete coincidente con los criterios de busqueda.
+El instalador terminó con: exit status 0x8a150014
+Se ejecutó el instalador pero 'gradle' sigue sin aparecer. Cerrá y abrí SpringCompiler, o instalalo desde https://gradle.org/install/.
+
+##### Job: build
+
+--- paso 1: omitido (el repo ya está en local)
+
+--- paso 2: se usa el 'java' instalado en tu PC (el workflow pide java 17)
+    C:\Program Files\Eclipse Adoptium\jdk-17.0.21.9-hotspot\bin\java.exe
+
+--- Instalar Android SDK si falta (bash)
+Loading package information...                                                  Loading local repository...                                                     [                                       ] 3% Loading local repository...        [                                       ] 3% Fetch remote repository...         [=                                      ] 3% Fetch remote repository...         [=                                      ] 4% Fetch remote repository...         [=                                      ] 5% Fetch remote repository...         [==                                     ] 5% Fetch remote repository...         [==                                     ] 6% Fetch remote repository...         [==                                     ] 7% Fetch remote repository...         [==                                     ] 7% Computing updates...               [===                                    ] 8% Computing updates...               [===                                    ] 10% Computing updates...              [===                                    ] 10% Installing Android SDK Platform-To[===                                    ] 10% Downloading platform-tools_r37.0.1[====                                   ] 10% Downloading platform-tools_r37.0.1[====                                   ] 11% Downloading platform-tools_r37.0.1[====                                   ] 12% Downloading platform-tools_r37.0.1[=====                                  ] 13% Downloading platform-tools_r37.0.1[=====                                  ] 14% Downloading platform-tools_r37.0.1[=====                                  ] 15% Downloading platform-tools_r37.0.1[======                                 ] 15% Downloading platform-tools_r37.0.1[======                                 ] 16% Downloading platform-tools_r37.0.1[======                                 ] 17% Downloading platform-tools_r37.0.1[=======                                ] 18% Downloading platform-tools_r37.0.1[=======                                ] 18% Unzipping...                      [=======                                ] 18% Unzipping... platform-tools/      [=======                                ] 18% Unzipping... platform-tools/adb.ex[=======                                ] 19% Unzipping... platform-tools/adb.ex[=======                                ] 20% Unzipping... platform-tools/adb.ex[========                               ] 20% Unzipping... platform-tools/adb.ex[========                               ] 21% Unzipping... platform-tools/adb.ex[========                               ] 21% Unzipping... platform-tools/AdbWin[========                               ] 21% Unzipping... platform-tools/etc1to[========                               ] 21% Unzipping... platform-tools/fastbo[========                               ] 22% Unzipping... platform-tools/fastbo[========                               ] 22% Unzipping... platform-tools/hprof-[=========                              ] 23% Unzipping... platform-tools/hprof-[=========                              ] 23% Unzipping... platform-tools/libwin[=========                              ] 23% Unzipping... platform-tools/make_f[=========                              ] 23% Unzipping... platform-tools/mke2fs[=========                              ] 23% Unzipping... platform-tools/NOTICE[=========                              ] 24% Unzipping... platform-tools/NOTICE[=========                              ] 24% Unzipping... platform-tools/source[=========                              ] 24% Unzipping... platform-tools/sqlite[=========                              ] 25% Unzipping... platform-tools/sqlite[===============                        ] 40% Unzipping... platform-tools/sqlite[===============                        ] 40% Installing Android SDK Build-Tools[===============                        ] 40% Downloading build-tools_r34-window[================                       ] 40% Downloading build-tools_r34-window[================                       ] 41% Downloading build-tools_r34-window[================                       ] 42% Downloading build-tools_r34-window[=================                      ] 43% Downloading build-tools_r34-window[=================                      ] 44% Downloading build-tools_r34-window[=================                      ] 45% Downloading build-tools_r34-window[==================                     ] 45% Downloading build-tools_r34-window[==================                     ] 46% Downloading build-tools_r34-window[==================                     ] 47% Downloading build-tools_r34-window[==================                     ] 48% Downloading build-tools_r34-window[==================                     ] 48% Unzipping... platform-tools/sqlite[==================                     ] 48% Unzipping... android-14/          [==================                     ] 48% Unzipping... android-14/lib/      [==================                     ] 48% Unzipping... android-14/lib64/    [==================                     ] 48% Unzipping... android-14/lld-bin/  [==================                     ] 48% Unzipping... android-14/renderscri[==================                     ] 48% Unzipping... android-14/aapt.exe  [===================                    ] 48% Unzipping... android-14/aapt.exe  [===================                    ] 48% Unzipping... android-14/aapt2.exe [===================                    ] 48% Unzipping... android-14/aarch64-li[===================                    ] 48% Unzipping... android-14/aidl.exe  [===================                    ] 48% Unzipping... android-14/apksigner.[===================                    ] 48% Unzipping... android-14/arm-linux-[===================                    ] 48% Unzipping... android-14/bcc_compat[===================                    ] 48% Unzipping... android-14/core-lambd[===================                    ] 48% Unzipping... android-14/d8.bat    [===================                    ] 48% Unzipping... android-14/dexdump.ex[===================                    ] 48% Unzipping... android-14/i686-linux[===================                    ] 48% Unzipping... android-14/libbcc.dll[===================                    ] 48% Unzipping... android-14/libbcinfo.[===================                    ] 48% Unzipping... android-14/libclang_a[===================                    ] 49% Unzipping... android-14/libclang_a[===================                    ] 49% Unzipping... android-14/libLLVM_an[===================                    ] 50% Unzipping... android-14/libLLVM_an[====================                   ] 50% Unzipping... android-14/libLLVM_an[====================                   ] 50% Unzipping... android-14/libwinpthr[====================                   ] 50% Unzipping... android-14/lld.exe   [====================                   ] 50% Unzipping... android-14/llvm-rs-cc[====================                   ] 50% Unzipping... android-14/mipsel-lin[====================                   ] 50% Unzipping... android-14/NOTICE.txt[====================                   ] 50% Unzipping... android-14/runtime.pr[====================                   ] 50% Unzipping... android-14/source.pro[====================                   ] 50% Unzipping... android-14/split-sele[====================                   ] 50% Unzipping... android-14/x86_64-lin[====================                   ] 50% Unzipping... android-14/zipalign.e[====================                   ] 51% Unzipping... android-14/zipalign.e[====================                   ] 51% Unzipping... android-14/lib/apksig[====================                   ] 51% Unzipping... android-14/lib/d8.jar[====================                   ] 52% Unzipping... android-14/lib/d8.jar[====================                   ] 52% Unzipping... android-14/lib64/libw[====================                   ] 52% Unzipping... android-14/lld-bin/li[====================                   ] 52% Unzipping... android-14/lld-bin/ll[=====================                  ] 53% Unzipping... android-14/lld-bin/ll[=====================                  ] 54% Unzipping... android-14/lld-bin/ll[=====================                  ] 54% Unzipping... android-14/renderscri[=====================                  ] 55% Unzipping... android-14/renderscri[===========================            ] 70% Unzipping... android-14/renderscri[===========================            ] 70% Installing Android SDK Platform 34[===========================            ] 70% Downloading platform-34-ext7_r03.z[============================           ] 70% Downloading platform-34-ext7_r03.z[============================           ] 71% Downloading platform-34-ext7_r03.z[============================           ] 72% Downloading platform-34-ext7_r03.z[=============================          ] 73% Downloading platform-34-ext7_r03.z[=============================          ] 74% Downloading platform-34-ext7_r03.z[=============================          ] 75% Downloading platform-34-ext7_r03.z[==============================         ] 75% Downloading platform-34-ext7_r03.z[==============================         ] 76% Downloading platform-34-ext7_r03.z[==============================         ] 77% Downloading platform-34-ext7_r03.z[==============================         ] 77% Unzipping... android-14/renderscri[==============================         ] 77% Unzipping... android-34/          [==============================         ] 77% Unzipping... android-34/android.ja[===============================        ] 78% Unzipping... android-34/android.ja[===============================        ] 79% Unzipping... android-34/android.ja[===============================        ] 80% Unzipping... android-34/android.ja[================================       ] 80% Unzipping... android-34/android.ja[================================       ] 80% Unzipping... android-34/optional/ [================================       ] 80% Unzipping... android-34/optional/a[================================       ] 80% Unzipping... android-34/optional/l[================================       ] 80% Unzipping... android-34/optional/o[================================       ] 80% Unzipping... android-34/optional/a[================================       ] 80% Unzipping... android-34/optional/o[================================       ] 80% Unzipping... android-34/templates/[================================       ] 80% Unzipping... android-34/core-for-s[================================       ] 81% Unzipping... android-34/core-for-s[================================       ] 81% Unzipping... android-34/build.prop[================================       ] 81% Unzipping... android-34/android-st[================================       ] 81% Unzipping... android-34/uiautomato[================================       ] 81% Unzipping... android-34/source.pro[================================       ] 81% Unzipping... android-34/data/     [================================       ] 81% Unzipping... android-34/data/servi[================================       ] 81% Unzipping... android-34/data/NOTIC[================================       ] 81% Unzipping... android-34/data/widge[================================       ] 81% Unzipping... android-34/data/broad[================================       ] 81% Unzipping... android-34/data/api-v[================================       ] 82% Unzipping... android-34/data/api-v[================================       ] 82% Unzipping... android-34/data/featu[================================       ] 82% Unzipping... android-34/data/annot[================================       ] 82% Unzipping... android-34/data/res/ [================================       ] 82% Unzipping... android-34/data/res/v[================================       ] 82% Unzipping... android-34/data/res/l[================================       ] 82% Unzipping... android-34/data/res/v[================================       ] 82% Unzipping... android-34/data/res/m[================================       ] 82% Unzipping... android-34/data/res/v[================================       ] 82% Unzipping... android-34/data/res/a[================================       ] 82% Unzipping... android-34/data/res/v[================================       ] 82% Unzipping... android-34/data/res/d[================================       ] 82% Unzipping... android-34/data/res/v[================================       ] 82% Unzipping... android-34/data/res/x[================================       ] 82% Unzipping... android-34/data/res/v[================================       ] 82% Unzipping... android-34/data/res/l[================================       ] 82% Unzipping... android-34/data/res/v[================================       ] 82% Unzipping... android-34/data/res/l[================================       ] 82% Unzipping... android-34/data/res/v[================================       ] 82% Unzipping... android-34/data/res/r[================================       ] 82% Unzipping... android-34/data/res/v[================================       ] 82% Unzipping... android-34/data/res/x[================================       ] 82% Unzipping... android-34/data/res/v[================================       ] 82% Unzipping... android-34/data/res/r[================================       ] 82% Unzipping... android-34/data/res/v[================================       ] 82% Unzipping... android-34/data/res/a[================================       ] 82% Unzipping... android-34/data/res/v[================================       ] 82% Unzipping... android-34/data/res/r[================================       ] 82% Unzipping... android-34/data/res/v[================================       ] 82% Unzipping... android-34/data/res/c[================================       ] 82% Unzipping... android-34/data/res/v[================================       ] 82% Unzipping... android-34/data/res/d[================================       ] 82% Unzipping... android-34/data/res/v[================================       ] 82% Unzipping... android-34/data/res/t[================================       ] 82% Unzipping... android-34/data/res/v[================================       ] 82% Unzipping... android-34/data/res/x[================================       ] 82% Unzipping... android-34/data/res/v[================================       ] 82% Unzipping... android-34/data/res/r[================================       ] 82% Unzipping... android-34/data/res/v[================================       ] 82% Unzipping... android-34/data/res/r[================================       ] 82% Unzipping... android-34/data/res/v[================================       ] 82% Unzipping... android-34/data/res/l[================================       ] 82% Unzipping... android-34/data/res/v[================================       ] 82% Unzipping... android-34/data/res/r[================================       ] 82% Unzipping... android-34/data/res/v[================================       ] 82% Unzipping... android-34/data/res/d[================================       ] 82% Unzipping... android-34/data/res/v[================================       ] 82% Unzipping... android-34/data/res/d[================================       ] 82% Unzipping... android-34/data/res/v[=================================      ] 83% Unzipping... android-34/data/res/v[=================================      ] 83% Unzipping... android-34/data/res/r[=================================      ] 83% Unzipping... android-34/data/res/v[=================================      ] 83% Unzipping... android-34/data/res/r[=================================      ] 83% Unzipping... android-34/data/res/v[=================================      ] 83% Unzipping... android-34/data/res/m[=================================      ] 83% Unzipping... android-34/data/res/v[=================================      ] 83% Unzipping... android-34/data/res/r[=================================      ] 83% Unzipping... android-34/data/res/v[=================================      ] 83% Unzipping... android-34/data/res/c[=================================      ] 83% Unzipping... android-34/data/res/v[=================================      ] 83% Unzipping... android-34/data/res/r[=================================      ] 83% Unzipping... android-34/data/res/v[=================================      ] 83% Unzipping... android-34/data/res/r[=================================      ] 83% Unzipping... android-34/data/res/v[=================================      ] 83% Unzipping... android-34/data/res/d[=================================      ] 83% Unzipping... android-34/data/res/v[=================================      ] 83% Unzipping... android-34/data/res/r[=================================      ] 83% Unzipping... android-34/data/res/v[=================================      ] 83% Unzipping... android-34/data/res/c[=================================      ] 83% Unzipping... android-34/data/res/v[=================================      ] 83% Unzipping... android-34/data/res/m[=================================      ] 83% Unzipping... android-34/data/res/v[=================================      ] 83% Unzipping... android-34/data/res/r[=================================      ] 83% Unzipping... android-34/data/res/v[=================================      ] 83% Unzipping... android-34/data/res/r[=================================      ] 83% Unzipping... android-34/data/res/v[=================================      ] 83% Unzipping... android-34/data/res/i[=================================      ] 83% Unzipping... android-34/data/res/v[=================================      ] 83% Unzipping... android-34/data/res/d[=================================      ] 83% Unzipping... android-34/data/res/v[=================================      ] 83% Unzipping... android-34/data/res/m[=================================      ] 83% Unzipping... android-34/data/res/v[=================================      ] 83% Unzipping... android-34/data/res/d[=================================      ] 83% Unzipping... android-34/data/res/v[=================================      ] 83% Unzipping... android-34/data/res/d[=================================      ] 83% Unzipping... android-34/data/res/v[=================================      ] 83% Unzipping... android-34/data/res/d[=================================      ] 83% Unzipping... android-34/data/res/v[=================================      ] 83% Unzipping... android-34/data/res/d[=================================      ] 84% Unzipping... android-34/data/res/d[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/res/d[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/res/d[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/res/x[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/res/d[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/res/d[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/res/a[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/res/r[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/res/m[=================================      ] 84% Unzipping... android-34/data/res/x[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/res/a[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/res/i[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/res/r[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/res/r[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/res/r[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/res/l[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/res/l[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/res/d[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/res/l[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/res/m[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/res/r[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/res/d[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/res/l[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/res/l[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/res/d[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/res/l[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/res/c[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/res/r[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/res/d[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/res/m[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/res/d[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/res/m[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/res/r[=================================      ] 84% Unzipping... android-34/data/res/l[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/res/r[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/res/d[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/res/r[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/res/d[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/res/d[=================================      ] 84% Unzipping... android-34/data/res/v[=================================      ] 84% Unzipping... android-34/data/categ[=================================      ] 84% Unzipping... android-34/data/activ[=================================      ] 85% Unzipping... android-34/data/activ[=================================      ] 85% Unzipping... android-34/sdk.proper[=================================      ] 85% Unzipping... android-34/skins/    [=================================      ] 85% Unzipping... android-34/skins/WXGA[=================================      ] 85% Unzipping... android-34/skins/WQVG[=================================      ] 85% Unzipping... android-34/skins/NOTI[=================================      ] 85% Unzipping... android-34/skins/HVGA[=================================      ] 85% Unzipping... android-34/skins/WVGA[=================================      ] 85% Unzipping... android-34/skins/WQVG[=================================      ] 85% Unzipping... android-34/skins/WVGA[=================================      ] 85% Unzipping... android-34/skins/QVGA[=================================      ] 85% Unzipping... android-34/skins/WXGA[=================================      ] 85% Unzipping... android-34/skins/WSVG[=================================      ] 85% Unzipping... android-34/skins/WXGA[=================================      ] 85% Unzipping... android-34/framework.[=======================================] 100% Unzipping... android-34/framework
+
+
+--- Compilar APK (bash)
+
+------------------------------------------------------------
+Gradle 8.5
+------------------------------------------------------------
+
+Build time:   2023-11-29 14:08:57 UTC
+Revision:     28aca86a7180baa17117e0e5ba01d8ea9feca598
+
+Kotlin:       1.9.20
+Groovy:       3.0.17
+Ant:          Apache Ant(TM) version 1.10.13 compiled on January 4 2023
+JVM:          17.0.21 (Eclipse Adoptium 17.0.21+9)
+OS:           Windows 11 10.0 amd64
+
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.5/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:checkKotlinGradlePluginConfigurationErrors
+> Task :app:generateDebugResValues
+> Task :app:checkDebugAarMetadata
+> Task :app:mapDebugSourceSetPaths
+> Task :app:generateDebugResources
+> Task :app:packageDebugResources
+> Task :app:createDebugCompatibleScreenManifests
+> Task :app:extractDeepLinksDebug
+> Task :app:parseDebugLocalResources
+> Task :app:processDebugMainManifest
+> Task :app:processDebugManifest
+> Task :app:javaPreCompileDebug
+> Task :app:mergeDebugShaders
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:mergeDebugResources
+> Task :app:mergeDebugAssets
+> Task :app:compressDebugAssets
+> Task :app:desugarDebugFileDependencies
+> Task :app:mergeDebugJniLibFolders
+> Task :app:checkDebugDuplicateClasses
+> Task :app:mergeDebugNativeLibs NO-SOURCE
+> Task :app:processDebugManifestForPackage
+> Task :app:mergeExtDexDebug
+> Task :app:stripDebugDebugSymbols NO-SOURCE
+> Task :app:mergeLibDexDebug
+> Task :app:validateSigningDebug
+> Task :app:writeDebugAppMetadata
+> Task :app:writeDebugSigningConfigVersions
+> Task :app:processDebugResources
+> Task :app:compileDebugKotlin
+e: file:///C:/Users/Anderson/AppData/Local/Temp/SpringCompiler-CamarasONVIF-2568939578/app/src/main/java/com/camaras/onvif/Onvif.kt:101:79 Returns are not allowed for functions with expression body. Use block body in '{...}'
+
+> Task :app:compileDebugKotlin FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:compileDebugKotlin'.
+> A failure occurred while executing org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction
+   > Compilation error. See log for more details
+
+* Try:
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+* Exception is:
+org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':app:compileDebugKotlin'.
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.lambda$executeIfValid$1(ExecuteActionsTaskExecuter.java:148)
+	at org.gradle.internal.Try$Failure.ifSuccessfulOrElse(Try.java:282)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:146)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:134)
+	at org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute(FinalizePropertiesTaskExecuter.java:46)
+	at org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter.execute(ResolveTaskExecutionModeExecuter.java:51)
+	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:57)
+	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:74)
+	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:36)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:77)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:55)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:52)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(EventFiringTaskExecuter.java:52)
+	at org.gradle.execution.plan.LocalTaskNodeExecutor.execute(LocalTaskNodeExecutor.java:42)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:331)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:318)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.lambda$execute$0(DefaultTaskExecutionGraph.java:314)
+	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:80)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:314)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:303)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:463)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:380)
+	at org.gradle.execution.plan.DefaultPlanExecutor.process(DefaultPlanExecutor.java:116)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.executeWithServices(DefaultTaskExecutionGraph.java:138)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.execute(DefaultTaskExecutionGraph.java:123)
+	at org.gradle.execution.SelectedTaskExecutionAction.execute(SelectedTaskExecutionAction.java:35)
+	at org.gradle.execution.DryRunBuildExecutionAction.execute(DryRunBuildExecutionAction.java:51)
+	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor$ExecuteTasks.call(BuildOperationFiringBuildWorkerExecutor.java:54)
+	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor$ExecuteTasks.call(BuildOperationFiringBuildWorkerExecutor.java:43)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)
+	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor.execute(BuildOperationFiringBuildWorkerExecutor.java:40)
+	at org.gradle.internal.build.DefaultBuildLifecycleController.lambda$executeTasks$10(DefaultBuildLifecycleController.java:313)
+	at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:266)
+	at org.gradle.internal.model.StateTransitionController.lambda$tryTransition$8(StateTransitionController.java:177)
+	at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:44)
+	at org.gradle.internal.model.StateTransitionController.tryTransition(StateTransitionController.java:177)
+	at org.gradle.internal.build.DefaultBuildLifecycleController.executeTasks(DefaultBuildLifecycleController.java:304)
+	at org.gradle.internal.build.DefaultBuildWorkGraphController$DefaultBuildWorkGraph.runWork(DefaultBuildWorkGraphController.java:220)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:264)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:128)
+	at org.gradle.composite.internal.DefaultBuildController.doRun(DefaultBuildController.java:181)
+	at org.gradle.composite.internal.DefaultBuildController.access$000(DefaultBuildController.java:50)
+	at org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.lambda$run$0(DefaultBuildController.java:198)
+	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:80)
+	at org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.run(DefaultBuildController.java:198)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
+Caused by: org.gradle.workers.internal.DefaultWorkerExecutor$WorkExecutionException: A failure occurred while executing org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction
+	at org.gradle.workers.internal.DefaultWorkerExecutor$WorkItemExecution.waitForCompletion(DefaultWorkerExecutor.java:283)
+	at org.gradle.internal.work.DefaultAsyncWorkTracker.lambda$waitForItemsAndGatherFailures$2(DefaultAsyncWorkTracker.java:130)
+	at org.gradle.internal.Factories$1.create(Factories.java:31)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withoutLocks(DefaultWorkerLeaseService.java:336)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withoutLocks(DefaultWorkerLeaseService.java:319)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withoutLock(DefaultWorkerLeaseService.java:324)
+	at org.gradle.internal.work.DefaultAsyncWorkTracker.waitForItemsAndGatherFailures(DefaultAsyncWorkTracker.java:126)
+	at org.gradle.internal.work.DefaultAsyncWorkTracker.waitForItemsAndGatherFailures(DefaultAsyncWorkTracker.java:92)
+	at org.gradle.internal.work.DefaultAsyncWorkTracker.waitForAll(DefaultAsyncWorkTracker.java:78)
+	at org.gradle.internal.work.DefaultAsyncWorkTracker.waitForCompletion(DefaultAsyncWorkTracker.java:66)
+	at org.gradle.api.internal.tasks.execution.TaskExecution$3.run(TaskExecution.java:256)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:29)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:26)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:47)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:68)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.executeAction(TaskExecution.java:233)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.executeActions(TaskExecution.java:216)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.executeWithPreviousOutputFiles(TaskExecution.java:199)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.execute(TaskExecution.java:166)
+	at org.gradle.internal.execution.steps.ExecuteStep.executeInternal(ExecuteStep.java:105)
+	at org.gradle.internal.execution.steps.ExecuteStep.access$000(ExecuteStep.java:44)
+	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:59)
+	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:56)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)
+	at org.gradle.internal.execution.steps.ExecuteStep.execute(ExecuteStep.java:56)
+	at org.gradle.internal.execution.steps.ExecuteStep.execute(ExecuteStep.java:44)
+	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.execute(RemovePreviousOutputsStep.java:67)
+	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.execute(RemovePreviousOutputsStep.java:37)
+	at org.gradle.internal.execution.steps.CancelExecutionStep.execute(CancelExecutionStep.java:41)
+	at org.gradle.internal.execution.steps.TimeoutStep.executeWithoutTimeout(TimeoutStep.java:74)
+	at org.gradle.internal.execution.steps.TimeoutStep.execute(TimeoutStep.java:55)
+	at org.gradle.internal.execution.steps.CreateOutputsStep.execute(CreateOutputsStep.java:50)
+	at org.gradle.internal.execution.steps.CreateOutputsStep.execute(CreateOutputsStep.java:28)
+	at org.gradle.internal.execution.steps.CaptureStateAfterExecutionStep.executeDelegateBroadcastingChanges(CaptureStateAfterExecutionStep.java:100)
+	at org.gradle.internal.execution.steps.CaptureStateAfterExecutionStep.execute(CaptureStateAfterExecutionStep.java:72)
+	at org.gradle.internal.execution.steps.CaptureStateAfterExecutionStep.execute(CaptureStateAfterExecutionStep.java:50)
+	at org.gradle.internal.execution.steps.ResolveInputChangesStep.execute(ResolveInputChangesStep.java:40)
+	at org.gradle.internal.execution.steps.ResolveInputChangesStep.execute(ResolveInputChangesStep.java:29)
+	at org.gradle.internal.execution.steps.BuildCacheStep.executeWithoutCache(BuildCacheStep.java:179)
+	at org.gradle.internal.execution.steps.BuildCacheStep.lambda$execute$1(BuildCacheStep.java:70)
+	at org.gradle.internal.Either$Right.fold(Either.java:175)
+	at org.gradle.internal.execution.caching.CachingState.fold(CachingState.java:59)
+	at org.gradle.internal.execution.steps.BuildCacheStep.execute(BuildCacheStep.java:68)
+	at org.gradle.internal.execution.steps.BuildCacheStep.execute(BuildCacheStep.java:46)
+	at org.gradle.internal.execution.steps.StoreExecutionStateStep.execute(StoreExecutionStateStep.java:36)
+	at org.gradle.internal.execution.steps.StoreExecutionStateStep.execute(StoreExecutionStateStep.java:25)
+	at org.gradle.internal.execution.steps.RecordOutputsStep.execute(RecordOutputsStep.java:36)
+	at org.gradle.internal.execution.steps.RecordOutputsStep.execute(RecordOutputsStep.java:22)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.executeBecause(SkipUpToDateStep.java:91)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.lambda$execute$2(SkipUpToDateStep.java:55)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateStep.java:55)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateStep.java:37)
+	at org.gradle.internal.execution.steps.ResolveChangesStep.execute(ResolveChangesStep.java:65)
+	at org.gradle.internal.execution.steps.ResolveChangesStep.execute(ResolveChangesStep.java:36)
+	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsFinishedStep.execute(MarkSnapshottingInputsFinishedStep.java:37)
+	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsFinishedStep.execute(MarkSnapshottingInputsFinishedStep.java:27)
+	at org.gradle.internal.execution.steps.ResolveCachingStateStep.execute(ResolveCachingStateStep.java:76)
+	at org.gradle.internal.execution.steps.ResolveCachingStateStep.execute(ResolveCachingStateStep.java:37)
+	at org.gradle.internal.execution.steps.ValidateStep.execute(ValidateStep.java:108)
+	at org.gradle.internal.execution.steps.ValidateStep.execute(ValidateStep.java:55)
+	at org.gradle.internal.execution.steps.CaptureStateBeforeExecutionStep.execute(CaptureStateBeforeExecutionStep.java:71)
+	at org.gradle.internal.execution.steps.CaptureStateBeforeExecutionStep.execute(CaptureStateBeforeExecutionStep.java:45)
+	at org.gradle.internal.execution.steps.SkipEmptyWorkStep.executeWithNonEmptySources(SkipEmptyWorkStep.java:177)
+	at org.gradle.internal.execution.steps.SkipEmptyWorkStep.execute(SkipEmptyWorkStep.java:86)
+	at org.gradle.internal.execution.steps.SkipEmptyWorkStep.execute(SkipEmptyWorkStep.java:53)
+	at org.gradle.internal.execution.steps.RemoveUntrackedExecutionStateStep.execute(RemoveUntrackedExecutionStateStep.java:32)
+	at org.gradle.internal.execution.steps.RemoveUntrackedExecutionStateStep.execute(RemoveUntrackedExecutionStateStep.java:21)
+	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsStartedStep.execute(MarkSnapshottingInputsStartedStep.java:38)
+	at org.gradle.internal.execution.steps.LoadPreviousExecutionStateStep.execute(LoadPreviousExecutionStateStep.java:36)
+	at org.gradle.internal.execution.steps.LoadPreviousExecutionStateStep.execute(LoadPreviousExecutionStateStep.java:23)
+	at org.gradle.internal.execution.steps.CleanupStaleOutputsStep.execute(CleanupStaleOutputsStep.java:75)
+	at org.gradle.internal.execution.steps.CleanupStaleOutputsStep.execute(CleanupStaleOutputsStep.java:41)
+	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.lambda$execute$2(ExecuteWorkBuildOperationFiringStep.java:66)
+	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.execute(ExecuteWorkBuildOperationFiringStep.java:66)
+	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.execute(ExecuteWorkBuildOperationFiringStep.java:38)
+	at org.gradle.internal.execution.steps.AssignWorkspaceStep.lambda$execute$0(AssignWorkspaceStep.java:32)
+	at org.gradle.api.internal.tasks.execution.TaskExecution$4.withWorkspace(TaskExecution.java:293)
+	at org.gradle.internal.execution.steps.AssignWorkspaceStep.execute(AssignWorkspaceStep.java:30)
+	at org.gradle.internal.execution.steps.AssignWorkspaceStep.execute(AssignWorkspaceStep.java:21)
+	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:37)
+	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:27)
+	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:47)
+	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:34)
+	at org.gradle.internal.execution.impl.DefaultExecutionEngine$1.execute(DefaultExecutionEngine.java:64)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:145)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:134)
+	at org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute(FinalizePropertiesTaskExecuter.java:46)
+	at org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter.execute(ResolveTaskExecutionModeExecuter.java:51)
+	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:57)
+	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:74)
+	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:36)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:77)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:55)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:52)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(EventFiringTaskExecuter.java:52)
+	at org.gradle.execution.plan.LocalTaskNodeExecutor.execute(LocalTaskNodeExecutor.java:42)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:331)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:318)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.lambda$execute$0(DefaultTaskExecutionGraph.java:314)
+	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:80)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:314)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:303)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:463)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:380)
+	at org.gradle.execution.plan.DefaultPlanExecutor.process(DefaultPlanExecutor.java:116)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.executeWithServices(DefaultTaskExecutionGraph.java:138)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.execute(DefaultTaskExecutionGraph.java:123)
+	at org.gradle.execution.SelectedTaskExecutionAction.execute(SelectedTaskExecutionAction.java:35)
+	at org.gradle.execution.DryRunBuildExecutionAction.execute(DryRunBuildExecutionAction.java:51)
+	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor$ExecuteTasks.call(BuildOperationFiringBuildWorkerExecutor.java:54)
+	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor$ExecuteTasks.call(BuildOperationFiringBuildWorkerExecutor.java:43)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)
+	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor.execute(BuildOperationFiringBuildWorkerExecutor.java:40)
+	at org.gradle.internal.build.DefaultBuildLifecycleController.lambda$executeTasks$10(DefaultBuildLifecycleController.java:313)
+	at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:266)
+	at org.gradle.internal.model.StateTransitionController.lambda$tryTransition$8(StateTransitionController.java:177)
+	at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:44)
+	at org.gradle.internal.model.StateTransitionController.tryTransition(StateTransitionController.java:177)
+	at org.gradle.internal.build.DefaultBuildLifecycleController.executeTasks(DefaultBuildLifecycleController.java:304)
+	at org.gradle.internal.build.DefaultBuildWorkGraphController$DefaultBuildWorkGraph.runWork(DefaultBuildWorkGraphController.java:220)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:264)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:128)
+	at org.gradle.composite.internal.DefaultBuildController.doRun(DefaultBuildController.java:181)
+	at org.gradle.composite.internal.DefaultBuildController.access$000(DefaultBuildController.java:50)
+	at org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.lambda$run$0(DefaultBuildController.java:198)
+	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:80)
+	at org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.run(DefaultBuildController.java:198)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
+Caused by: org.jetbrains.kotlin.gradle.tasks.CompilationErrorException: Compilation error. See log for more details
+	at org.jetbrains.kotlin.gradle.tasks.TasksUtilsKt.throwExceptionIfCompilationFailed(tasksUtils.kt:20)
+	at org.jetbrains.kotlin.compilerRunner.GradleKotlinCompilerWork.run(GradleKotlinCompilerWork.kt:141)
+	at org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction.execute(GradleCompilerRunnerWithWorkers.kt:73)
+	at org.gradle.workers.internal.DefaultWorkerServer.execute(DefaultWorkerServer.java:63)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1$1.create(NoIsolationWorkerFactory.java:66)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1$1.create(NoIsolationWorkerFactory.java:62)
+	at org.gradle.internal.classloader.ClassLoaderUtils.executeInClassloader(ClassLoaderUtils.java:100)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1.lambda$execute$0(NoIsolationWorkerFactory.java:62)
+	at org.gradle.workers.internal.AbstractWorker$1.call(AbstractWorker.java:44)
+	at org.gradle.workers.internal.AbstractWorker$1.call(AbstractWorker.java:41)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)
+	at org.gradle.workers.internal.AbstractWorker.executeWrappedInBuildOperation(AbstractWorker.java:41)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1.execute(NoIsolationWorkerFactory.java:59)
+	at org.gradle.workers.internal.DefaultWorkerExecutor.lambda$submitWork$0(DefaultWorkerExecutor.java:170)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.runExecution(DefaultConditionalExecutionQueue.java:187)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.access$700(DefaultConditionalExecutionQueue.java:120)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner$1.run(DefaultConditionalExecutionQueue.java:162)
+	at org.gradle.internal.Factories$1.create(Factories.java:31)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:264)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:128)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:133)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.runBatch(DefaultConditionalExecutionQueue.java:157)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.run(DefaultConditionalExecutionQueue.java:126)
+	... 2 more
+
+
+BUILD FAILED in 2m 9s
+26 actionable tasks: 26 executed
+
+FALLÓ en 'Compilar APK': exit status 1
