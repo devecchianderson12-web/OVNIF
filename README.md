@@ -21,7 +21,7 @@ Las IP tipo 192.168.x.x solo existen dentro de tu casa. Para verlas desde fuera 
 1. En el router, reenvía un puerto externo (ej. 8554, TCP) hacia IP_CAMARA:554.
 2. Usa tu IP pública o un DDNS gratuito (No-IP, DuckDNS, etc.).
 3. En ONVNIF: Mis cámaras > mantén pulsada la cámara > Editar > Dirección remota: `tu-ddns.net:8554`.
-4. La app usa la IP local si la cámara responde y la dirección remota si no.
+4. La app usa la IP local si la cámara responde y la dirección remota si no. Si la elegida falla al reproducir, prueba automáticamente la otra (15 s de espera por intento).
 
 Riesgo de B: expones tus cámaras a internet. Cambia la contraseña de fábrica por una larga y única, y desactiva UPnP. Si puedes, usa la opción A.
 

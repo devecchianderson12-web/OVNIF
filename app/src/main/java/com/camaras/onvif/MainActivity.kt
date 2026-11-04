@@ -344,6 +344,8 @@ class MainActivity : Activity() {
                 i.putExtra("note", "")
                 i.putExtra("fromSaved", true)
                 i.putExtra("via", if (r.second) "🌐 Red remota" else "🏠 Red local")
+                i.putExtra("alt", Store.alternate(cam, r.second))
+                i.putExtra("altVia", if (r.second) "🏠 Red local" else "🌐 Red remota")
                 startActivity(i)
             }
         }.start()

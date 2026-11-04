@@ -26,6 +26,9 @@ class PlayerActivity : Activity() {
     private lateinit var status: TextView
     private lateinit var edit: EditText
     private lateinit var playerView: PlayerView
+    private var viaView: TextView? = null
+    private var altUrl: String = ""
+    private var altVia: String = ""
     private val chips = ArrayList<Pair<Button, String>>()
 
     private fun dp(v: Int): Int = Ui.dp(this, v)
@@ -39,6 +42,8 @@ class PlayerActivity : Activity() {
         val note = intent.getStringExtra("note") ?: ""
         val fromSaved = intent.getBooleanExtra("fromSaved", false)
         val via = intent.getStringExtra("via") ?: ""
+        altUrl = intent.getStringExtra("alt") ?: ""
+        altVia = intent.getStringExtra("altVia") ?: ""
 
         val root = LinearLayout(this)
         root.orientation = LinearLayout.VERTICAL
@@ -62,6 +67,7 @@ class PlayerActivity : Activity() {
             val v = Ui.label(this, via, 13f, Ui.SOFT)
             v.setPadding(dp(12), 0, 0, 0)
             top.addView(v)
+            viaView = v
         }
         root.addView(top)
 
@@ -204,11 +210,20 @@ class PlayerActivity : Activity() {
             }
 
             override fun onPlayerError(error: PlaybackException) {
+                val next = altUrl
+                if (next.isNotEmpty()) {
+                    altUrl = ""
+                    viaView?.text = altVia
+                    status.text = "Sin respuesta. Probando $altVia…"
+                    status.post { play(next) }
+                    return
+                }
                 status.text = "Error: ${error.errorCodeName}. Revisa la red o prueba otra URL."
             }
         })
         val src = RtspMediaSource.Factory()
             .setForceUseRtpTcp(true)
+            .setTimeoutMs(15000)
             .createMediaSource(MediaItem.fromUri(url))
         p.setMediaSource(src)
         p.prepare()

@@ -69,10 +69,16 @@ object Store {
         }
     }
 
+    /** La otra ruta posible (remota si se eligio la local y viceversa), o "" si no hay. */
+    fun alternate(cam: SavedCam, primaryIsRemote: Boolean): String {
+        if (primaryIsRemote) return cam.url
+        return if (cam.remote.isNotBlank()) withRemote(cam.url, cam.remote) else ""
+    }
+
     /** Elige la URL local si la camara responde; si no, la remota (si existe). */
     fun pick(cam: SavedCam): Pair<String, Boolean> {
         val host = host(cam.url)
-        if (host.isNotEmpty() && reachable(host, port(cam.url), 1500)) return Pair(cam.url, false)
+        if (host.isNotEmpty() && reachable(host, port(cam.url), 2500)) return Pair(cam.url, false)
         if (cam.remote.isNotBlank()) return Pair(withRemote(cam.url, cam.remote), true)
         return Pair(cam.url, false)
     }
