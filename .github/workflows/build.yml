@@ -4,7 +4,8 @@ on:
   push:
     branches: [ main, master ]
   workflow_dispatch:
-
+permissions:
+  contents: write
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -55,3 +56,13 @@ jobs:
         with:
           name: CamarasONVIF-apk
           path: app/build/outputs/apk/debug/*.apk
+
+      - name: Publicar release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="build-${{ github.run_number }}"
+          gh release create "$TAG" app/build/outputs/apk/debug/*.apk \
+            --title "ONVNIF $TAG" \
+            --notes "Build automático del commit ${GITHUB_SHA::7}" \
+            --target "$GITHUB_SHA"
