@@ -6,7 +6,7 @@ import org.json.JSONObject
 import java.net.InetSocketAddress
 import java.net.Socket
 
-data class SavedCam(val name: String, val url: String, val remote: String)
+data class SavedCam(val name: String, val url: String, val remote: String, val auto: Boolean = false)
 
 object Store {
     private const val PREF = "saved_cams"
@@ -19,7 +19,7 @@ object Store {
             val a = JSONArray(s)
             for (i in 0 until a.length()) {
                 val o = a.getJSONObject(i)
-                out.add(SavedCam(o.optString("name"), o.optString("url"), o.optString("remote")))
+                out.add(SavedCam(o.optString("name"), o.optString("url"), o.optString("remote"), o.optBoolean("auto", false)))
             }
         } catch (e: Exception) {
             // lista corrupta: ignorar
@@ -34,11 +34,13 @@ object Store {
             o.put("name", c.name)
             o.put("url", c.url)
             o.put("remote", c.remote)
+            o.put("auto", c.auto)
             a.put(o)
         }
         ctx.getSharedPreferences(PREF, Context.MODE_PRIVATE).edit().putString("list", a.toString()).apply()
     }
 
+    @Synchronized
     fun upsert(ctx: Context, cam: SavedCam) {
         val l = load(ctx)
         val idx = l.indexOfFirst { it.url == cam.url }

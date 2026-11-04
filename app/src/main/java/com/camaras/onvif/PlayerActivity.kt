@@ -164,7 +164,7 @@ class PlayerActivity : Activity() {
         box.addView(
             Ui.label(
                 this,
-                "Para verla desde otra red: abre un puerto en tu router y usa tu IP pública o DDNS (ej: casa.ddns.net:8554), o usa una VPN como Tailscale y deja esto vacío. Mira el README.",
+                "Déjalo vacío y la app intenta abrir sola el acceso remoto en tu router (UPnP). O escribe tu propia dirección (ej: casa.ddns.net:8554) / usa una VPN como Tailscale. Mira el README.",
                 12f, Ui.MUTED
             ),
             Ui.lp(this, 10)
@@ -175,8 +175,19 @@ class PlayerActivity : Activity() {
         cancel.setOnClickListener { d.dismiss() }
         ok.setOnClickListener {
             val name = n.text.toString().trim().ifEmpty { Store.host(url) }
-            Store.upsert(this, SavedCam(name, url, Store.cleanRemote(r.text.toString())))
-            Toast.makeText(this, "Guardada", Toast.LENGTH_SHORT).show()
+            val remote = Store.cleanRemote(r.text.toString())
+            val cam = SavedCam(name, url, remote)
+            Store.upsert(this, cam)
+            if (remote.isEmpty()) {
+                Toast.makeText(this, "Guardada. Configurando acceso remoto…", Toast.LENGTH_SHORT).show()
+                val app = applicationContext
+                Thread {
+                    val msg = Upnp.refresh(app, cam)
+                    runOnUiThread { Toast.makeText(app, msg, Toast.LENGTH_LONG).show() }
+                }.start()
+            } else {
+                Toast.makeText(this, "Guardada", Toast.LENGTH_SHORT).show()
+            }
             d.dismiss()
         }
         Ui.show(this, d)

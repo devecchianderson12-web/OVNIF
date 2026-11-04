@@ -275,13 +275,24 @@ class MainActivity : Activity() {
         }
     }
 
+    /** Entra directo con las credenciales recordadas; solo pregunta la primera vez o si fallan. */
     private fun ask(cam: Camera) {
+        val prefs = getSharedPreferences("cams", MODE_PRIVATE)
+        val user = prefs.getString("user", "") ?: ""
+        if (user.isNotEmpty()) {
+            open(cam, user, prefs.getString("pass", "") ?: "")
+        } else {
+            askDialog(cam, "")
+        }
+    }
+
+    private fun askDialog(cam: Camera, error: String) {
         val prefs = getSharedPreferences("cams", MODE_PRIVATE)
         val box = LinearLayout(this)
         box.orientation = LinearLayout.VERTICAL
         box.setPadding(dp(22), dp(22), dp(22), dp(16))
 
-        val u = Ui.field(this, "Usuario", prefs.getString("user", "admin") ?: "admin", false)
+        val u = Ui.field(this, "Usuario", prefs.getString("user", "") ?: "", false)
         val p = Ui.field(this, "Contraseña", prefs.getString("pass", "") ?: "", true)
 
         val row = LinearLayout(this)
@@ -294,6 +305,7 @@ class MainActivity : Activity() {
 
         box.addView(Ui.label(this, "Conectar a ${cam.ip}", 18f, Ui.TEXT, true))
         box.addView(Ui.label(this, "Usuario y contraseña de la cámara", 13f, Ui.MUTED))
+        if (error.isNotEmpty()) box.addView(Ui.label(this, error, 13f, Ui.RED))
         box.addView(u, Ui.lp(this, 16))
         box.addView(p, Ui.lp(this, 10))
         box.addView(row, Ui.lp(this, 18))
@@ -316,6 +328,12 @@ class MainActivity : Activity() {
             var note = ""
             val urls: List<String> = try {
                 Onvif.streams(cam, user, pass)
+            } catch (e: AuthException) {
+                runOnUiThread {
+                    status.text = "${shown.size} encontradas. Toca una para ver."
+                    askDialog(cam, e.message ?: "")
+                }
+                return@Thread
             } catch (e: Exception) {
                 note = e.message ?: "Error ONVIF"
                 Onvif.fallback(cam.ip, user, pass)
@@ -337,6 +355,10 @@ class MainActivity : Activity() {
         status.text = "Conectando a ${cam.name}…"
         Thread {
             val r = Store.pick(cam)
+            if (!r.second && (cam.remote.isBlank() || cam.auto)) {
+                // en casa: abre/renueva el acceso remoto en segundo plano
+                Thread { Upnp.refresh(applicationContext, cam) }.start()
+            }
             runOnUiThread {
                 refreshSaved()
                 val i = Intent(this, PlayerActivity::class.java)
@@ -406,7 +428,8 @@ class MainActivity : Activity() {
         cancel.setOnClickListener { d.dismiss() }
         ok.setOnClickListener {
             val name = n.text.toString().trim().ifEmpty { cam.name }
-            Store.upsert(this, SavedCam(name, cam.url, Store.cleanRemote(r.text.toString())))
+            val remote = Store.cleanRemote(r.text.toString())
+            Store.upsert(this, SavedCam(name, cam.url, remote, cam.auto && remote == cam.remote))
             d.dismiss()
             refreshSaved()
         }
