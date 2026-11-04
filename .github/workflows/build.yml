@@ -44,12 +44,10 @@ jobs:
 
       - name: Compilar APK
         run: |
-          if ! command -v gradle >/dev/null 2>&1; then
-            mkdir -p "$HOME/gradle-dist"
-            curl -fsSL https://services.gradle.org/distributions/gradle-8.5-bin.zip -o "$HOME/gradle.zip"
-            unzip -q -o "$HOME/gradle.zip" -d "$HOME/gradle-dist"
-            export PATH="$HOME/gradle-dist/gradle-8.5/bin:$PATH"
-          fi
+          mkdir -p "$HOME/gradle-dist"
+          curl -fsSL https://services.gradle.org/distributions/gradle-8.5-bin.zip -o "$HOME/gradle.zip"
+          unzip -q -o "$HOME/gradle.zip" -d "$HOME/gradle-dist"
+          export PATH="$HOME/gradle-dist/gradle-8.5/bin:$PATH"
           gradle --version
           gradle assembleDebug --no-daemon --stacktrace
 
