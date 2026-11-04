@@ -182,8 +182,18 @@ class PlayerActivity : Activity() {
                 Toast.makeText(this, "Guardada. Configurando acceso remoto…", Toast.LENGTH_SHORT).show()
                 val app = applicationContext
                 Thread {
-                    val msg = Upnp.refresh(app, cam)
-                    runOnUiThread { Toast.makeText(app, msg, Toast.LENGTH_LONG).show() }
+                    val res = Upnp.refresh(app, cam)
+                    runOnUiThread {
+                        if (res.ok || isFinishing || isDestroyed) {
+                            Toast.makeText(app, res.msg, Toast.LENGTH_LONG).show()
+                        } else {
+                            AlertDialog.Builder(this)
+                                .setTitle("Acceso remoto")
+                                .setMessage(res.msg)
+                                .setPositiveButton("Entendido", null)
+                                .show()
+                        }
+                    }
                 }.start()
             } else {
                 Toast.makeText(this, "Guardada", Toast.LENGTH_SHORT).show()

@@ -183,18 +183,28 @@ object Upnp {
             try {
                 soap(net, g, "AddPortMapping", mapArgs(extPort, camIp, camPort, 604800))
             } catch (e2: Exception) {
-                return Result(false, "", "El router rechazó abrir el puerto: ${e2.message}")
+                val router = try {
+                    URL(g.control).host
+                } catch (e3: Exception) {
+                    "tu router"
+                }
+                return Result(
+                    false, "$ext:$extPort",
+                    "El router no permite abrirlo solo (${e2.message}). Una sola vez: entra a $router, " +
+                        "sección Reenvío de puertos, y manda el puerto TCP $extPort a $camIp:$camPort. " +
+                        "Después la app mantiene tu IP pública actualizada sola."
+                )
             }
         }
         return Result(true, "$ext:$extPort", "Acceso remoto activado ($ext:$extPort)")
     }
 
-    /** Abre el puerto y guarda/actualiza la direccion remota de la camara. Devuelve un mensaje. */
-    fun refresh(ctx: Context, cam: SavedCam): String {
+    /** Abre el puerto y guarda/actualiza la direccion remota (aunque el router no deje abrirlo solo). */
+    fun refresh(ctx: Context, cam: SavedCam): Result {
         val r = open(ctx, Store.host(cam.url), Store.port(cam.url))
-        if (r.ok && r.remote != cam.remote) {
+        if (r.remote.isNotEmpty() && r.remote != cam.remote) {
             Store.upsert(ctx, SavedCam(cam.name, cam.url, r.remote, true))
         }
-        return r.msg
+        return r
     }
 }
