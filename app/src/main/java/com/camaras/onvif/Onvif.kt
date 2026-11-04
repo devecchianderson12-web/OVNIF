@@ -98,7 +98,9 @@ object Onvif {
         val resp = soap(ep, """<GetSystemDateAndTime xmlns="http://www.onvif.org/ver10/device/wsdl"/>""", "", "", 0L)
         val block = Regex("UTCDateTime>(.*?)</(?:\\w+:)?UTCDateTime>", RegexOption.DOT_MATCHES_ALL)
             .find(resp)?.groupValues?.get(1) ?: return 0L
-        fun n(name: String): Int = tag(block, name)?.trim()?.toIntOrNull() ?: return 0
+        fun n(name: String): Int {
+            return tag(block, name)?.trim()?.toIntOrNull() ?: 0
+        }
         val cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"))
         cal.clear()
         cal.set(n("Year"), n("Month") - 1, n("Day"), n("Hour"), n("Minute"), n("Second"))
